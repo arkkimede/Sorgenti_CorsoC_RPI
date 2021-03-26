@@ -1,0 +1,41 @@
+#!/bin/bash
+# Script per la compilazione di sorgenti c e cpp in ambiente bash
+# La script verifica il file in ingresso e di conseguenza lo processa
+#
+# Arkkimede - Marzo 2021
+#######################################
+if [ $# == 0 ]; then
+   echo "uso $0 nome_del_codice_sorgente"
+   exit
+fi
+
+if [[ "$1" =~ [.] ]]; then
+   FNAME=`echo "$1" | cut -d'.' -f1`
+   EXT=`echo "$1" | cut -d'.' -f2`
+   rm -f ${FNAME}
+   if [ $EXT == 'c' ]; then
+       gcc ${FNAME}.$EXT -o ${FNAME} -Wall -lm -O3
+       exit
+   elif [ $EXT == 'cpp' ]; then
+       g++ ${FNAME}.$EXT -o ${FNAME} -Wall -lm -O3
+       exit
+   else
+       echo "Questo script compila src con estensione .c o .cpp
+       exit
+   fi
+else
+   FNAME=$1
+   rm -f ${FNAME}
+   if [ -a ${FNAME}.c ]; then
+        gcc ${FNAME}.c -o ${FNAME} -Wall -lm -O3
+        exit
+   elif [ -a ${FNAME}.cpp ]; then
+        g++ ${FNAME}.cpp -o ${FNAME} -Wall -lm -O3
+        exit
+   else
+        echo "Questo script compila solo src con estensione .c o .cpp
+        exit
+   fi
+fi
+# If you want to define a variable in compile time:
+# gcc ${FNAME}.c -o {FNAME} -Wall -lm -D"VARIABLE_NAME_IN_SOURCE=value"
