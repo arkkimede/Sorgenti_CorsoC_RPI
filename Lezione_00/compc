@@ -20,7 +20,7 @@ if [[ "$1" =~ [.] ]]; then
        g++ ${FNAME}.$EXT -o ${FNAME} -Wall -lm -O3
        exit
    else
-       echo "Questo script compila src con estensione .c o .cpp
+       echo "Questo script compila src con estensione .c o .cpp"
        exit
    fi
 else
@@ -33,7 +33,7 @@ else
         g++ ${FNAME}.cpp -o ${FNAME} -Wall -lm -O3
         exit
    else
-        echo "Questo script compila solo src con estensione .c o .cpp
+        echo "Questo script compila solo src con estensione .c o .cpp"
         exit
    fi
 fi
