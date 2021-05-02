@@ -1,0 +1,9 @@
+# Elaborazione del programma ./esempio7_6 versione 1.0 del data 
+# Lista dei dati in ingresso:
+   3.00       Freqeunza [GHz]
+  50.00       Guadagno antenna in trasmissione [dB]
+  30.00       Guadagno antenna in ricezione [dB]
+ 100.00       Potenza trasmessa [W]
+# La potenza ricevuta a 10 km di distanza è:
+   8.01       Potenza ricevuta [dBm]
+   6.32       Potenza ricevuta [mW]
